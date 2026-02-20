@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import AnimatedSection from "./AnimatedSection";
+import AnimatedCounter from "./AnimatedCounter";
 
 const metrics = [
   { value: "3.2x", label: "Avg. productivity gain" },
@@ -39,7 +40,10 @@ const testimonials = [
 
 export default function ResultsSection() {
   return (
-    <section id="results" className="py-28 md:py-36 bg-bg-surface relative overflow-hidden">
+    <section
+      id="results"
+      className="py-28 md:py-36 bg-bg-surface relative overflow-hidden"
+    >
       {/* Subtle background texture */}
       <div className="absolute inset-0 pointer-events-none">
         <Image
@@ -52,7 +56,7 @@ export default function ResultsSection() {
       </div>
 
       <div className="relative max-w-content mx-auto px-6">
-        {/* Metrics */}
+        {/* Metrics with animated counters */}
         <AnimatedSection>
           <p className="font-mono text-xs tracking-[0.15em] text-text-muted uppercase mb-16">
             Results
@@ -64,7 +68,7 @@ export default function ResultsSection() {
             <AnimatedSection key={i} delay={i * 0.08}>
               <div>
                 <span className="block text-4xl md:text-5xl lg:text-6xl font-bold font-mono tracking-tighter text-text-primary leading-none">
-                  {m.value}
+                  <AnimatedCounter target={m.value} />
                 </span>
                 <span className="block text-sm text-text-muted mt-3">
                   {m.label}

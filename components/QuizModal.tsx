@@ -150,6 +150,9 @@ export default function QuizModal({ isOpen, onClose }: QuizModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.92, y: 30 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            role="dialog"
+            aria-modal="true"
+            aria-label="AI Readiness Quiz"
             className="relative bg-bg-card border border-border rounded-3xl w-full max-w-[520px] max-h-[90vh] overflow-y-auto shadow-2xl shadow-black/40"
           >
             {/* Top bar with progress + close */}

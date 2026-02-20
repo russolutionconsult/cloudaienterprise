@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, DM_Serif_Display, DM_Mono } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 import { OrganizationJsonLd, ServiceJsonLd } from "@/components/JsonLd";
 import "./globals.css";
 
@@ -86,11 +87,18 @@ export default function RootLayout({
       className={`${bricolage.variable} ${dmSerif.variable} ${dmMono.variable}`}
     >
       <body className="font-sans bg-bg text-text-primary min-h-screen">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-accent focus:text-white focus:px-4 focus:py-2 focus:rounded-lg"
+        >
+          Skip to main content
+        </a>
         <OrganizationJsonLd />
         <ServiceJsonLd />
         <Nav />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );

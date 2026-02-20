@@ -4,10 +4,12 @@ import { useState } from "react";
 import Image from "next/image";
 import Hero from "@/components/Hero";
 import Ticker from "@/components/Ticker";
+import ClientLogos from "@/components/ClientLogos";
 import ProblemSection from "@/components/ProblemSection";
 import ServicesSection from "@/components/ServicesSection";
 import ProcessSection from "@/components/ProcessSection";
 import ResultsSection from "@/components/ResultsSection";
+import FAQSection from "@/components/FAQSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import QuizModal from "@/components/QuizModal";
@@ -21,12 +23,13 @@ export default function HomePage() {
     <>
       <Hero />
       <Ticker />
+      <ClientLogos />
       <ProblemSection />
       <ServicesSection />
       <ProcessSection />
       <ResultsSection />
 
-      {/* Quiz CTA Section — with image */}
+      {/* Quiz CTA Section */}
       <section id="quiz" className="py-28 md:py-36">
         <div className="max-w-content mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
@@ -108,9 +111,10 @@ export default function HomePage() {
       </section>
 
       <AboutSection />
+      <FAQSection />
       <ContactSection />
 
-      {/* Final CTA — with background image */}
+      {/* Final CTA */}
       <section className="relative py-28 md:py-36 overflow-hidden">
         <div className="absolute inset-0">
           <Image
